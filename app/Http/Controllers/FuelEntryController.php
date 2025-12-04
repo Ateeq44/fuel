@@ -35,7 +35,7 @@ class FuelEntryController extends Controller
         'odometer'    => 'required|numeric',
         'fuel_type'=> 'required',
         'station_name'=> 'required',
-        'receipt_image'=> 'required|image|mimes:jpg,png,jpeg',
+        'receipt_image'=> 'required|image|mimes:jpg,png,jpeg,webp',
     ]);
 
     // Custom manual upload to public folder
