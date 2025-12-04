@@ -14,7 +14,8 @@
             <th>Litros</th>
             <th>Costo</th>
             <th>Odómetro</th>
-            <th>Estación</th>
+            <th>Tipo de combustible</th>
+            <th>Nombre de la Estación</th>
         </tr>
     </thead>
 
@@ -27,6 +28,7 @@
             <td>{{ $entry->liters }}</td>
             <td>${{ $entry->total_cost }}</td>
             <td>{{ $entry->odometer }}</td>
+            <td>{{ $entry->fuel_type }}</td>
             <td>{{ $entry->station_name }}</td>
         </tr>
         @endforeach
