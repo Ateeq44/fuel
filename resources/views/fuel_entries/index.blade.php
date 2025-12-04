@@ -21,7 +21,8 @@
                 <th>Litros</th>
                 <th>Costo Total</th>
                 <th>Odómetro</th>
-                <th>Estación</th>
+                <th>Tipo de combustible</th>
+                <th>Nombre de la Estación</th>
                 <th>Recibo</th>
                 <th>Acciones</th>
             </tr>
@@ -36,6 +37,7 @@
                     <td>{{ $entry->liters }}</td>
                     <td>{{ $entry->total_cost }}</td>
                     <td>{{ $entry->odometer }}</td>
+                    <td>{{ $entry->fuel_type }}</td>
                     <td>{{ $entry->station_name }}</td>
                     <td>
                         <a href="{{ asset('storage/'.$entry->receipt_image_path) }}" target="_blank" class="btn btn-sm btn-info">

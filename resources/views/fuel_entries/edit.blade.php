@@ -56,4 +56,31 @@
             <input type="number" name="odometer" class="form-control" value="{{ $fuel_entry->odometer }}" required>
         </div>
 
-        <div cl
+        <div class="mb-3">
+            <label>Tipo de combustible</label>
+            <select class="form-control" name="fuel_type" id="">
+                <option value="Diésel" {{ $fuel_entry->fuel_type == 'Diésel' ? 'selected' : '' }}>Diésel</option>
+                <option value="Gasolina Premium" {{ $fuel_entry->fuel_type == 'Gasolina Premium' ? 'selected' : '' }}>Gasolina Premium</option>
+                <option value="Gasolina Regular" {{ $fuel_entry->fuel_type == 'Gasolina Regular' ? 'selected' : '' }}>Gasolina Regular</option>
+            </select>
+        </div>
+        
+        <div class="mb-3">
+            <label>Nombre de la Estación</label>
+            <input type="text" name="station_name" class="form-control" value="{{ $fuel_entry->station_name }}" required>
+        </div>
+
+        <div class="mb-3">
+            <label>Subir Recibo</label>
+            <input type="file" name="receipt_image" class="form-control" required>
+        </div>
+        
+
+        <button class="btn btn-success">Guardar</button>
+        <a href="{{ route('fuel_entries.index') }}" class="btn btn-secondary">Regresar</a>
+
+    </form>
+
+</div>
+@endsection
+

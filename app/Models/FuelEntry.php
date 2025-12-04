@@ -13,6 +13,7 @@ class FuelEntry extends Model
         'liters',
         'total_cost',
         'odometer',
+        'fuel_type',
         'station_name',
         'receipt_image_path'
     ];

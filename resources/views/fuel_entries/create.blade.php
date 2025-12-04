@@ -53,6 +53,16 @@
         </div>
 
         <div class="mb-3">
+            <label>Tipo de combustible</label>
+            <select class="form-control" name="fuel_type" id="">
+                <option value="Diésel">Diésel</option>
+                <option value="Diésel Premium">Diésel Premium</option>
+                <option value="Gasolina Regular">Gasolina Regular</option>
+                <option value="Gasolina Regular">Gasolina Regular</option>
+            </select>
+        </div>
+        
+        <div class="mb-3">
             <label>Nombre de la Estación</label>
             <input type="text" name="station_name" class="form-control" required>
         </div>
@@ -61,6 +71,7 @@
             <label>Subir Recibo</label>
             <input type="file" name="receipt_image" class="form-control" required>
         </div>
+        
 
         <button class="btn btn-success">Guardar</button>
         <a href="{{ route('fuel_entries.index') }}" class="btn btn-secondary">Regresar</a>
