@@ -33,6 +33,7 @@ class FuelEntryController extends Controller
         'liters'      => 'required|numeric',
         'total_cost'  => 'required|numeric',
         'odometer'    => 'required|numeric',
+        'fuel_type'=> 'required',
         'station_name'=> 'required',
         'receipt_image'=> 'required|image|mimes:jpg,png,jpeg',
     ]);
@@ -49,6 +50,7 @@ class FuelEntryController extends Controller
         'liters'     => $request->liters,
         'total_cost' => $request->total_cost,
         'odometer'   => $request->odometer,
+        'fuel_type'   => $request->fuel_type,
         'station_name'=> $request->station_name,
         'receipt_image_path' => 'fuel_receipts/' . $fileName,
     ]);
@@ -74,8 +76,9 @@ class FuelEntryController extends Controller
         'liters'      => 'required|numeric',
         'total_cost'  => 'required|numeric',
         'odometer'    => 'required|numeric',
+        'fuel_type'=> 'required',
         'station_name'=> 'required',
-        'receipt_image'=> 'image|mimes:jpg,png,jpeg',
+        'receipt_image'=> 'image|mimes:jpg,png,jpeg,webp',
     ]);
 
     $path = $fuel_entry->receipt_image_path;
@@ -100,6 +103,7 @@ class FuelEntryController extends Controller
         'liters'     => $request->liters,
         'total_cost' => $request->total_cost,
         'odometer'   => $request->odometer,
+        'fuel_type'   => $request->fuel_type,
         'station_name'=> $request->station_name,
         'receipt_image_path' => $path,
     ]);

@@ -54,10 +54,9 @@
 
         <div class="mb-3">
             <label>Tipo de combustible</label>
-            <select class="form-control" name="fuel_type" id="">
+            <select class="form-control" name="fuel_type" required>
                 <option value="Diésel">Diésel</option>
-                <option value="Diésel Premium">Diésel Premium</option>
-                <option value="Gasolina Regular">Gasolina Regular</option>
+                <option value="Diésel Premium">Gasolina Premium</option>
                 <option value="Gasolina Regular">Gasolina Regular</option>
             </select>
         </div>

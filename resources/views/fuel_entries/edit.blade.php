@@ -58,7 +58,7 @@
 
         <div class="mb-3">
             <label>Tipo de combustible</label>
-            <select class="form-control" name="fuel_type" id="">
+            <select class="form-control" name="fuel_type" required>
                 <option value="Diésel" {{ $fuel_entry->fuel_type == 'Diésel' ? 'selected' : '' }}>Diésel</option>
                 <option value="Gasolina Premium" {{ $fuel_entry->fuel_type == 'Gasolina Premium' ? 'selected' : '' }}>Gasolina Premium</option>
                 <option value="Gasolina Regular" {{ $fuel_entry->fuel_type == 'Gasolina Regular' ? 'selected' : '' }}>Gasolina Regular</option>
