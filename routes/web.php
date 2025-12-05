@@ -8,7 +8,7 @@ use App\Http\Controllers\FuelEntryController;
 use App\Http\Controllers\AdminReportController;
 use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\GasStationController;
-use App\Http\Controllers\userFuelEntryController;
+use App\Http\Controllers\UserFuelEntryController;
 use Illuminate\Support\Facades\Route;
 
 
