@@ -73,7 +73,7 @@
                     @if(auth()->check() && auth()->user()->role === 'user')
                     <!-- user Fuel Entries -->
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('fuel_entries.index') }}">Entradas de Combustible</a>                   
+                        <a class="nav-link" href="{{ route('user_fuel_entries.index') }}">Entradas de Combustible</a>                   
                     </li>
                     @endif
                 </ul>

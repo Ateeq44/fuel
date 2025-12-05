@@ -16,6 +16,7 @@ class FuelEntry extends Model
         'total_cost',
         'odometer',
         'fuel_type',
+        'user_id',
         'receipt_image_path'
     ];
 
