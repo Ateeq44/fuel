@@ -103,11 +103,12 @@
                         <th>Fecha</th>
                         <th>Vehículo</th>
                         <th>Conductor</th>
+                        <th>Department</th>
+                        <th>Gas Station</th>
                         <th>Litros</th>
                         <th>Costo Total</th>
                         <th>Odómetro</th>
                         <th>Tipo de combustible</th>
-                        <th>Nombre de la Estación</th>
                         <th>Recibo</th>
                     </tr>
                 </thead>
@@ -118,11 +119,12 @@
                             <td>{{ $entry->date }}</td>
                             <td>{{ $entry->vehicle->registration_number }}</td>
                             <td>{{ $entry->driver->name }}</td>
+                            <td>{{ $entry->department->name ?? 'N/A' }}</td>
+                            <td>{{ $entry->gasStation->name ?? 'N/A' }}</td>
                             <td>{{ $entry->liters }}</td>
                             <td>${{ $entry->total_cost }}</td>
                             <td>{{ $entry->odometer }}</td>
                             <td>{{ $entry->fuel_type }}</td>
-                            <td>{{ $entry->station_name }}</td>
                             <td>
                                 <a href="{{ asset('storage/' . $entry->receipt_image_path) }}" target="_blank" class="btn btn-sm btn-info">
                                     <i class="fa-solid fa-eye"></i>

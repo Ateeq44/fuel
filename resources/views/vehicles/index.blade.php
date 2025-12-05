@@ -15,7 +15,7 @@
     <table class="table table-bordered">
         <thead>
             <tr>
-                <!-- <th>ID</th> -->
+                <th>#</th>
                 <th>Número de Registro</th>
                 <th>Número de Placa</th>
                 <th>Modelo</th>
@@ -25,9 +25,9 @@
         </thead>
 
         <tbody>
-            @foreach($vehicles as $vehicle)
+            @foreach($vehicles as $key => $vehicle)
                 <tr>
-                    <!-- <td>{{ $vehicle->id }}</td> -->
+                    <td>{{ ++$key }}</td>
                     <td>{{ $vehicle->registration_number }}</td>
                     <td>{{ $vehicle->plate_number }}</td>
                     <td>{{ $vehicle->model }}</td>

@@ -27,13 +27,37 @@
                 <label>Conductor</label>
                 <select name="driver_id" class="form-control" required>
                     @foreach($drivers as $d)
-                        <option value="{{ $d->id }}" 
-                            {{ $fuel_entry->driver_id == $d->id ? 'selected' : '' }}>
+                    <option value="{{ $d->id }}" 
+                    {{ $fuel_entry->driver_id == $d->id ? 'selected' : '' }}>
+                    {{ $d->name }}
+                </option>
+                @endforeach
+            </select>
+        </div>
+        
+        
+        <div class="col-md-6 mb-3">
+                <label>Department</label>
+                <select name="department_id" class="form-control">
+                    @foreach ($departments as $d)
+                        <option value="{{ $d->id }}" {{ $fuel_entry->department_id == $d->id ? 'selected' : '' }}>
                             {{ $d->name }}
+                        </option>
+                    @endforeach
+                </select>     
+            </div>
+            
+            <div class="col-md-6 mb-3">
+                <label>Gas Station</label>
+                <select name="gas_station_id" class="form-control">
+                    @foreach ($stations as $s)
+                        <option value="{{ $s->id }}" {{ $fuel_entry->gas_station_id == $s->id ? 'selected' : '' }}>
+                            {{ $s->name }}
                         </option>
                     @endforeach
                 </select>
             </div>
+           
         </div>
 
         <div class="mb-3">
@@ -64,11 +88,7 @@
                 <option value="Gasolina Regular" {{ $fuel_entry->fuel_type == 'Gasolina Regular' ? 'selected' : '' }}>Gasolina Regular</option>
             </select>
         </div>
-        
-        <div class="mb-3">
-            <label>Nombre de la Estación</label>
-            <input type="text" name="station_name" class="form-control" value="{{ $fuel_entry->station_name }}" required>
-        </div>
+       
 
         <div class="mb-3">
             <label>Subir Recibo</label>

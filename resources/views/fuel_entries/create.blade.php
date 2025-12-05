@@ -29,6 +29,25 @@
                     @endforeach
                 </select>
             </div>
+            <div class="col-md-6 mb-3">
+                <label>Department</label>
+                <select name="department_id" class="form-control">
+                    <option value="">Select Department</option>
+                    @foreach ($departments as $d)
+                        <option value="{{ $d->id }}">{{ $d->name }}</option>
+                    @endforeach
+                </select>
+            </div>
+
+            <div class="col-md-6 mb-3">
+                <label>Gas Station</label>
+                <select name="gas_station_id" class="form-control">
+                    <option value="">Select Gas Station</option>
+                    @foreach ($stations as $s)
+                        <option value="{{ $s->id }}">{{ $s->name }}</option>
+                    @endforeach
+                </select>
+            </div>
 
         </div>
 
@@ -60,11 +79,7 @@
                 <option value="Gasolina Regular">Gasolina Regular</option>
             </select>
         </div>
-        
-        <div class="mb-3">
-            <label>Nombre de la Estación</label>
-            <input type="text" name="station_name" class="form-control" required>
-        </div>
+
 
         <div class="mb-3">
             <label>Subir Recibo</label>

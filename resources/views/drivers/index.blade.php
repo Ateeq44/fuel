@@ -16,6 +16,7 @@
         <thead>
             <tr>
                 <!-- <th>ID</th> -->
+                <th>#</th>
                 <th>Nombre del Conductor</th>
                 <th>Teléfono</th>
                 <th>Vehículo Asignado</th>
@@ -24,9 +25,9 @@
         </thead>
 
         <tbody>
-            @foreach($drivers as $driver)
+            @foreach($drivers as $key => $driver)
                 <tr>
-                    <!-- <td>{{ $driver->id }}</td> -->
+                    <td>{{ ++$key}}</td>
                     <td>{{ $driver->name }}</td>
                     <td>{{ $driver->phone }}</td>
                     <td>{{ $driver->vehicle->registration_number ?? 'No Asignado' }}</td>

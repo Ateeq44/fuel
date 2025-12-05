@@ -38,10 +38,11 @@
                 <ul class="navbar-nav me-auto">
 
                     <!-- Dashboard -->
+                     @if(auth()->check() && auth()->user()->role === 'admin')
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url('/admin/dashboard') }}">Panel</a>
                     </li>
-
+                    
                     <!-- Vehicles -->
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('vehicles.index') }}">Vehículos</a>
@@ -56,12 +57,25 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('fuel_entries.index') }}">Entradas de Combustible</a>                   
                     </li>
-
+                     
                     <!-- Entries Reports -->
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('admin.reports') }}">Informes</a>                   
                     </li>    
-
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('department.index') }}">Department</a>                   
+                    </li>    
+                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('gas_station.index') }}">Gas Station</a>                   
+                    </li>    
+                    @endif
+                    @if(auth()->check() && auth()->user()->role === 'user')
+                    <!-- user Fuel Entries -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('fuel_entries.index') }}">Entradas de Combustible</a>                   
+                    </li>
+                    @endif
                 </ul>
                 <div class="dropdown">
                     <button class="btn btn-secondary dropdown-toggle bg-dark border-0" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
