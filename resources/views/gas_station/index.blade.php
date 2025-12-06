@@ -37,12 +37,16 @@
                 </td>
 
                 <td>
-                    <a href="{{ route('gas_station.edit', $s->id) }}" class="btn btn-sm btn-warning">Edit</a>
+                    <a href="{{ route('gas_station.edit', $s->id) }}" class="btn btn-sm btn-warning">
+                        <i class="fa-solid fa-pen-to-square"></i>
+                    </a>
 
                     <form action="{{ route('gas_station.destroy', $s->id) }}" method="POST" style="display:inline-block;">
                         @csrf
                         @method('DELETE')
-                        <button class="btn btn-sm btn-danger" onclick="return confirm('Delete?');">Delete</button>
+                        <button class="btn btn-sm btn-danger" onclick="return confirm('Delete?');">
+                            <i class="fa-solid fa-trash-can"></i>
+                        </button>
                     </form>
                 </td>
             </tr>
