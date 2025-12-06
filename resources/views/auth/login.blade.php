@@ -14,31 +14,46 @@
 
             <h3 class="mb-5 text-center">Iniciar sesión</h3>
             <form method="POST" action="/login">
-            @csrf
-              <div data-mdb-input-init class="form-outline mb-4">
-                  <label class="form-label" for="email">Correo electrónico</label>
-                  <input type="email" id="email" class="form-control form-control-lg" name="email" :value="old('email')" required autofocus autocomplete="username"/>
-                  @error('email')
-                      <div class="invalid-feedback">{{ $message }}</div>
-                  @enderror
-                </div>
-                
-                <div data-mdb-input-init class="form-outline mb-4">
-                  <label class="form-label" for="password">Contraseña</label>
-                  <input type="password" id="password" class="form-control form-control-lg"  name="password" required autocomplete="current-password"/>
-                  @error('password')
-                      <div class="invalid-feedback">{{ $message }}</div>
-                  @enderror
-              </div>
+    @csrf
 
-              <!-- Checkbox -->
-              <div class="form-check d-flex justify-content-start mb-4">
-                <input class="form-check-input" type="checkbox" value="" id="form1Example3" />
-                <label class="form-check-label" for="form1Example3"> Recordar contraseña </label>
-              </div>
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <strong>Email or Password is incorrect.</strong>
+        </div>
+    @endif
 
-              <button data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-lg btn-block w-100" type="submit">Acceder</button>
-            </form>
+    <!-- Email -->
+    <div class="form-outline mb-4">
+        <label class="form-label" for="email">Correo electrónico</label>
+        <input type="email" 
+               id="email" 
+               name="email" 
+               value="{{ old('email') }}" 
+               class="form-control form-control-lg @error('email') is-invalid @enderror"
+               required>
+
+        @error('email')
+            <div class="invalid-feedback d-block">{{ $message }}</div>
+        @enderror
+    </div>
+
+    <!-- Password -->
+    <div class="form-outline mb-4">
+        <label class="form-label" for="password">Contraseña</label>
+        <input type="password" 
+               id="password" 
+               name="password" 
+               class="form-control form-control-lg @error('password') is-invalid @enderror"
+               required>
+
+        @error('password')
+            <div class="invalid-feedback d-block">{{ $message }}</div>
+        @enderror
+    </div>
+
+    <button class="btn btn-primary btn-lg w-100" type="submit">Acceder</button>
+</form>
+
             
           </div>
         </div>

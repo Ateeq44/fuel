@@ -24,6 +24,7 @@ class AuthenticatedSessionController extends Controller
      */
     public function store(LoginRequest $request): RedirectResponse
     {
+        
         $request->authenticate();
         $request->session()->regenerate();
 
@@ -31,7 +32,7 @@ class AuthenticatedSessionController extends Controller
             return redirect()->route('admin.dashboard');
         }
 
-        return redirect()->route('dashboard');
+        return redirect()->route('user_fuel_entries.index');
     }
 
     /**
