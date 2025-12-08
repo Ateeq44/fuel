@@ -1,19 +1,20 @@
 <div class="container">
 
 <h2>Informe de Combustible</h2>
+
 <table width="100%" style="margin-bottom: 20px;">
     <tr>
-        <td style="vertical-align: top;">
+        <td style="width: 100px;">
             <img src="{{ $logo }}" style="width: 120px;" alt="">
         </td>
-        <td style="vertical-align: top;">
+        <td style="">
             <p><strong>Ayuntamiento de Pinotepa Nacional</strong></p> 
             <p><strong>Administración 2025-2027</strong></p>
         </td>    
     </tr>
 </table>
-    <p><strong>Total de Litros:</strong> {{ $totalLiters }}</p>
-    <p><strong>Costo Total:</strong> ${{ $totalCost }}</p>
+<p><strong>Total de Litros:</strong> {{ $totalLiters }}</p>
+<p><strong>Costo Total:</strong> ${{ $totalCost }}</p>
     
 <table width="100%" border="1" cellspacing="0" cellpadding="5">
     <thead>
