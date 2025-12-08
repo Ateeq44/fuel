@@ -18,15 +18,23 @@
             border-color: #565e64;
             box-shadow: unset !important;
         }
+        .navbar-light .navbar-nav .nav-link {
+            color: rgb(0 0 0);
+            font-size: 20px;
+            margin-left: 15px;
+        }
+        nav.navbar.navbar-expand-lg.navbar-light.bg-light {
+        box-shadow: 0px 0px 4px 0px black;
+        }
     </style>
 </head>
 <body>
     {{-- NAVBAR START --}}
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light mb-5">
         <div class="container">
             
             <a class="navbar-brand" href="{{ url('admin/dashboard') }}">
-                Gestión de Combustible
+                <img style="width: 100px;" src="{{asset('images/logo.png')}}" alt="">
             </a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">

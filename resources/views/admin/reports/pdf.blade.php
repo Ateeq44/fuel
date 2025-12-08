@@ -1,9 +1,18 @@
 <div class="container">
 
 <h2>Informe de Combustible</h2>
+<table width="100%" style="margin-bottom: 20px;">
+    <tr>
+        <td style="vertical-align: top;">
+            <p><strong>Total de Litros:</strong> {{ $totalLiters }}</p>
+            <p><strong>Costo Total:</strong> ${{ $totalCost }}</p>
+        </td>
 
-<p><strong>Total de Litros:</strong> {{ $totalLiters }}</p>
-<p><strong>Costo Total:</strong> ${{ $totalCost }}</p>
+        <td style="text-align: right; vertical-align: top;">
+            <img src="{{ $logo }}" style="width: 120px;" alt="">
+        </td>
+    </tr>
+</table>
 
 <table width="100%" border="1" cellspacing="0" cellpadding="5">
     <thead>

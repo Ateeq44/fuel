@@ -76,8 +76,8 @@ class AdminReportController extends Controller
         // Summary
         $totalLiters = $entries->sum('liters');
         $totalCost   = $entries->sum('total_cost');
-
-        $pdf = Pdf::loadView('admin.reports.pdf', compact('entries', 'totalLiters', 'totalCost'));
+        $logo = public_path('images/logo.png');
+        $pdf = Pdf::loadView('admin.reports.pdf', compact('entries', 'totalLiters', 'totalCost', 'logo'));
 
         return $pdf->download('fuel_report.pdf');
     }
