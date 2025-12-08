@@ -7,7 +7,7 @@
         <td style="width: 100px;">
             <img src="{{ $logo }}" style="width: 120px;" alt="">
         </td>
-        <td style="">
+        <td style="vertical-align: top;">
             <p><strong>Ayuntamiento de Pinotepa Nacional</strong></p> 
             <p><strong>Administración 2025-2027</strong></p>
         </td>    
