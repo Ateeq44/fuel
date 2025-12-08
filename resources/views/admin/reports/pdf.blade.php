@@ -1,6 +1,7 @@
 <div class="container">
 
 <h2>Informe de Combustible</h2>
+<p><strong>Ayuntamiento de Pinotepa Nacional Administración 2025-2027</strong></p>
 <table width="100%" style="margin-bottom: 20px;">
     <tr>
         <td style="vertical-align: top;">
