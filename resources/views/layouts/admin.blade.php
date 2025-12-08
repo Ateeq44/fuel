@@ -32,11 +32,16 @@
     {{-- NAVBAR START --}}
     <nav class="navbar navbar-expand-lg navbar-light bg-light mb-5">
         <div class="container">
-            
+            @if(auth()->check() && auth()->user()->role === 'admin')
             <a class="navbar-brand" href="{{ url('admin/dashboard') }}">
                 <img style="width: 100px;" src="{{asset('images/logo.png')}}" alt="">
             </a>
-
+            @endif
+            @if(auth()->check() && auth()->user()->role === 'user')
+            <a class="navbar-brand" href="{{ route('user_fuel_entries.index') }}">
+                <img style="width: 100px;" src="{{asset('images/logo.png')}}" alt="">
+            </a>
+            @endif
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
