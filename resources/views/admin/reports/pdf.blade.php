@@ -13,7 +13,7 @@
         </td>    
     </tr>
 </table>
-<p><strong>Total de Litros:</strong> {{ $totalLiters }}</p>
+<p style="margin-top:30px;"><strong>Total de Litros:</strong> {{ $totalLiters }}</p>
 <p><strong>Costo Total:</strong> ${{ $totalCost }}</p>
     
 <table width="100%" border="1" cellspacing="0" cellpadding="5">
