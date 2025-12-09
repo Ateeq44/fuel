@@ -76,11 +76,11 @@
                         <a class="nav-link" href="{{ route('admin.reports') }}">Informes</a>                   
                     </li>    
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('department.index') }}">Department</a>                   
+                        <a class="nav-link" href="{{ route('department.index') }}">Departamento</a>                   
                     </li>    
                     
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('gas_station.index') }}">Gas Station</a>                   
+                        <a class="nav-link" href="{{ route('gas_station.index') }}">Estaciones</a>                   
                     </li>    
                     @endif
                     @if(auth()->check() && auth()->user()->role === 'user')

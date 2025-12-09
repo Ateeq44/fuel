@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-    <h2>Gas Stations</h2>
+    <h2>Gasolinera</h2>
     <div class="d-flex justify-content-end mb-3">
         <a href="{{ route('gas_station.create') }}" class="btn btn-primary mb-3">Add Station</a>
     </div>
@@ -11,12 +11,12 @@
         <thead>
             <tr>
                 <th>#</th>
-                <th>Name</th>
-                <th>Location</th>
-                <th>Contact</th>
-                <th>Fuel Types</th>
-                <th>Status</th>
-                <th width="150">Actions</th>
+                <th>Nombre</th>
+                <th>Ubicación</th>
+                <th>Número de contacto</th>
+                <th>Tipos de combustible</th>
+                <th>Estado</th>
+                <th width="150">Acciones</th>
             </tr>
         </thead>
 

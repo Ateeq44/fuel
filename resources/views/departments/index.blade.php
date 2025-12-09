@@ -16,10 +16,10 @@
         <thead>
             <tr>
                 <th>#</th>
-                <th>Name</th>
-                <th>Status</th>
-                <th>Description</th>
-                <th width="150">Actions</th>
+                <th>Nombre</th>
+                <th>Estado</th>
+                <th>Descripción</th>
+                <th width="150">Acciones</th>
             </tr>
         </thead>
 
