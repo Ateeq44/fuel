@@ -23,27 +23,25 @@ class VehicleController extends Controller
     {
         $request->validate([
             'registration_number' => 'required',
-            'vehicle_name' => 'required',
             'model' => 'required',
             'type' => 'required',
         ]);
-        
+
         Vehicle::create($request->all());
-        
+
         return redirect()->route('vehicles.index')
-        ->with('success', 'Vehicle added successfully.');
+                         ->with('success', 'Vehicle added successfully.');
     }
-    
+
     public function edit(Vehicle $vehicle)
     {
         return view('vehicles.edit', compact('vehicle'));
     }
-    
+
     public function update(Request $request, Vehicle $vehicle)
     {
         $request->validate([
             'registration_number' => 'required',
-            'vehicle_name' => 'required',
             'model' => 'required',
             'type' => 'required',
         ]);

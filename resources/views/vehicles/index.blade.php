@@ -17,7 +17,6 @@
             <tr>
                 <th>#</th>
                 <th>Número de Registro</th>
-                <th>Nombre del vehículo</th>
                 <th>Número de Placa</th>
                 <th>Modelo</th>
                 <th>Tipo</th>
@@ -30,7 +29,6 @@
                 <tr>
                     <td>{{ ++$key }}</td>
                     <td>{{ $vehicle->registration_number }}</td>
-                    <td>{{ $vehicle->vehicle_name }}</td>
                     <td>{{ $vehicle->plate_number }}</td>
                     <td>{{ $vehicle->model }}</td>
                     <td>{{ $vehicle->type }}</td>

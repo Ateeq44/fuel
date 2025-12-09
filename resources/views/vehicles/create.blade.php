@@ -12,11 +12,6 @@
             <label>Número de Registro</label>
             <input type="text" name="registration_number" class="form-control" required>
         </div>
-        
-        <div class="mb-3">
-            <label>Nombre del vehículo</label>
-            <input type="text" name="vehicle_name" class="form-control" required>
-        </div>
 
         <div class="mb-3">
             <label>Modelo</label>
