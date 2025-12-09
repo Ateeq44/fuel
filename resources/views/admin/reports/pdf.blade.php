@@ -1,51 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Fuel Report</title>
+    <style>
+        body { font-family: sans-serif; font-size: 13px; }
+    </style>
+</head>
+<body>
+
 <div class="container">
 
-<h2>Informe de Combustible</h2>
+    <!-- Header (Logo + Title) -->
+    <table width="100%" style="margin-bottom: 20px;">
+        <tr>
+            <td style="width: 120px;">
+                <img src="{{ $logo }}" style="width: 120px;">
+            </td>
+            <td style="vertical-align: top;">
+                <p><strong>Ayuntamiento de Pinotepa Nacional</strong></p>
+                <p><strong>Administración 2025-2027</strong></p>
+            </td>
+        </tr>
+    </table>
 
-<table width="100%" style="margin-bottom: 20px;">
-    <tr>
-        <td style="width: 100px;">
-            <img src="{{ $logo }}" style="width: 120px;" alt="">
-        </td>
-        <td style="vertical-align: top;">
-            <p><strong>Ayuntamiento de Pinotepa Nacional</strong></p> 
-            <p><strong>Administración 2025-2027</strong></p>
-        </td>    
-    </tr>
-</table>
-<p style="margin-top:30px;"><strong>Total de Litros:</strong> {{ $totalLiters }}</p>
-<p><strong>Costo Total:</strong> ${{ $totalCost }}</p>
+    <!-- Date Range -->
+    <p style="margin-top: 10px;">
+        <strong>Reporte Desde:</strong> {{ $from_date }}
+        &nbsp;&nbsp;&nbsp;
+        <strong>Hasta:</strong> {{ $to_date }}
+    </p>
     
-<table width="100%" border="1" cellspacing="0" cellpadding="5">
-    <thead>
-        <tr>
-            <th>Fecha</th>
-            <th>Vehículo</th>
-            <th>Conductor</th>
-            <th>Department</th>
-            <th>Gas Station</th>
-            <th>Litros</th>
-            <th>Costo</th>
-            <th>Odómetro</th>
-            <th>Tipo de combustible</th>
-        </tr>
-    </thead>
+    <p style="margin-top: 10px;">
+        <strong>Total de Litros:</strong> {{ $totalLiters }}
+        &nbsp;&nbsp;&nbsp;
+        <strong>Costo Total:</strong> ${{ $totalCost }}
+    </p>
 
-    <tbody>
-        @foreach($entries as $entry)
-        <tr>
-            <td>{{ $entry->date }}</td>
-            <td>{{ $entry->vehicle->registration_number }}</td>
-            <td>{{ $entry->driver->name }}</td>
-            <td>{{ $entry->department->name ?? 'N/A' }}</td>
-            <td>{{ $entry->gasStation->name ?? 'N/A' }}</td>
-            <td>{{ $entry->liters }}</td>
-            <td>${{ $entry->total_cost }}</td>
-            <td>{{ $entry->odometer }}</td>
-            <td>{{ $entry->fuel_type }}</td>
-        </tr>
-        @endforeach
-    </tbody>
-</table>
+    <!-- Table -->
+    <table style="width: 100%; border-collapse: collapse; margin-top: 20px;">
+        <thead>
+            <tr>
+                <th style="border: 1px solid #000; padding: 6px; text-align: left;background: #f0f0f0; ">Fecha</th>
+                <th style="border: 1px solid #000; padding: 6px; text-align: left;background: #f0f0f0; ">Vehículo</th>
+                <th style="border: 1px solid #000; padding: 6px; text-align: left;background: #f0f0f0; ">Conductor</th>
+                <th style="border: 1px solid #000; padding: 6px; text-align: left;background: #f0f0f0; ">Department</th>
+                <th style="border: 1px solid #000; padding: 6px; text-align: left;background: #f0f0f0; ">Gas Station</th>
+                <th style="border: 1px solid #000; padding: 6px; text-align: left;background: #f0f0f0; ">Litros</th>
+                <th style="border: 1px solid #000; padding: 6px; text-align: left;background: #f0f0f0; ">Costo</th>
+                <th style="border: 1px solid #000; padding: 6px; text-align: left;background: #f0f0f0; ">Odómetro</th>
+                <th style="border: 1px solid #000; padding: 6px; text-align: left;background: #f0f0f0; ">Tipo de Combustible</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach($entries as $entry)
+            <tr>
+                <td style="border: 1px solid #000; padding: 6px; text-align: left;">{{ $entry->date }}</td>
+                <td style="border: 1px solid #000; padding: 6px; text-align: left;">{{ $entry->vehicle->registration_number }}</td>
+                <td style="border: 1px solid #000; padding: 6px; text-align: left;">{{ $entry->driver->name }}</td>
+                <td style="border: 1px solid #000; padding: 6px; text-align: left;">{{ $entry->department->name ?? 'N/A' }}</td>
+                <td style="border: 1px solid #000; padding: 6px; text-align: left;">{{ $entry->gasStation->name ?? 'N/A' }}</td>
+                <td style="border: 1px solid #000; padding: 6px; text-align: left;">{{ $entry->liters }}</td>
+                <td style="border: 1px solid #000; padding: 6px; text-align: left;">${{ number_format($entry->total_cost, 2) }}</td>
+                <td style="border: 1px solid #000; padding: 6px; text-align: left;">{{ $entry->odometer }}</td>
+                <td style="border: 1px solid #000; padding: 6px; text-align: left;">{{ $entry->fuel_type }}</td>
+            </tr>
+            @endforeach
+        </tbody>
+    </table>
 
 </div>
+
+</body>
+</html>

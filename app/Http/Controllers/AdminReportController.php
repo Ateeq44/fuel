@@ -51,36 +51,67 @@ class AdminReportController extends Controller
     /* ------------------- PDF EXPORT ------------------- */
 
     public function exportPDF(Request $request)
-    {
-        $vehicle_id = $request->vehicle_id;
-        $driver_id  = $request->driver_id;
-        $from_date  = $request->from_date;
-        $to_date    = $request->to_date;
+{
+    $vehicle_id = $request->vehicle_id;
+    $driver_id  = $request->driver_id;
+    $from_date  = $request->from_date;
+    $to_date    = $request->to_date;
 
-        $query = FuelEntry::with(['vehicle', 'driver']);
+    $query = FuelEntry::with(['vehicle', 'driver', 'department', 'gasStation']);
 
-        if ($vehicle_id) {
-            $query->where('vehicle_id', $vehicle_id);
-        }
-
-        if ($driver_id) {
-            $query->where('driver_id', $driver_id);
-        }
-
-        if ($from_date && $to_date) {
-            $query->whereBetween('date', [$from_date, $to_date]);
-        }
-
-        $entries = $query->orderBy('date', 'desc')->get();
-
-        // Summary
-        $totalLiters = $entries->sum('liters');
-        $totalCost   = $entries->sum('total_cost');
-        $logo = public_path('images/logo.png');
-        $pdf = Pdf::loadView('admin.reports.pdf', compact('entries', 'totalLiters', 'totalCost', 'logo'));
-
-        return $pdf->download('fuel_report.pdf');
+    // Apply optional filters
+    if ($vehicle_id) {
+        $query->where('vehicle_id', $vehicle_id);
     }
+
+    if ($driver_id) {
+        $query->where('driver_id', $driver_id);
+    }
+
+    // CASE 1: User selected From–To date manually
+    if ($from_date && $to_date) {
+
+        $query->whereBetween('date', [$from_date, $to_date]);
+
+        $autoFrom = $from_date;
+        $autoTo   = $to_date;
+
+    } else {
+
+        // CASE 2: User did NOT select any date – use DB min & max date
+
+        $autoFrom = FuelEntry::min('date');
+        $autoTo   = FuelEntry::max('date');
+
+        // Apply auto date range to query
+        if ($autoFrom && $autoTo) {
+            $query->whereBetween('date', [$autoFrom, $autoTo]);
+        }
+    }
+
+    // Fetch final results
+    $entries = $query->orderBy('date', 'desc')->get();
+
+    // Summary
+    $totalLiters = $entries->sum('liters');
+    $totalCost   = $entries->sum('total_cost');
+
+    // Logo
+    $logo = public_path('images/logo.png');
+
+    // Generate PDF
+    $pdf = Pdf::loadView('admin.reports.pdf', [
+        'entries'     => $entries,
+        'totalLiters' => $totalLiters,
+        'totalCost'   => $totalCost,
+        'from_date'   => $autoFrom,
+        'to_date'     => $autoTo,
+        'logo'        => $logo
+    ]);
+
+    return $pdf->download('fuel_report.pdf');
+}
+
 
 
     /* ------------------- Excel EXPORT ------------------- */
