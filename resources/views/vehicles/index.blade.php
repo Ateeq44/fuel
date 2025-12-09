@@ -34,14 +34,14 @@
                     <td>{{ $vehicle->type }}</td>
                     <td>
                         <a href="{{ route('vehicles.edit', $vehicle->id) }}" class="btn btn-sm btn-success">
-                            <i class="fa-solid fa-pen-to-square"></i>
+                            <img style="width:25px;" src="{{asset('images/edit.png')}}" alt="">
                         </a>
-
+                        
                         <form action="{{ route('vehicles.destroy', $vehicle->id) }}" method="POST" class="d-inline">
                             @csrf
                             @method('DELETE')
                             <button class="btn btn-sm btn-danger" onclick="return confirm('¿Eliminar este vehículo?')">
-                                <i class="fa-solid fa-trash-can"></i>
+                                <img style="width:25px;" src="{{asset('images/delete.png')}}" alt="">
                             </button>
                         </form>
 

@@ -34,14 +34,14 @@
 
                     <td>
                         <a href="{{ route('drivers.edit', $driver->id) }}" class="btn btn-sm btn-success">
-                            <i class="fa-solid fa-pen-to-square"></i>
+                                                        <img style="width:25px;" src="{{asset('images/edit.png')}}" alt="">
                         </a>
 
                         <form action="{{ route('drivers.destroy', $driver->id) }}" method="POST" class="d-inline">
                             @csrf
                             @method('DELETE')
                             <button class="btn btn-sm btn-danger" onclick="return confirm('¿Eliminar este conductor?')">
-                                <i class="fa-solid fa-trash-can"></i>
+                                                                <img style="width:25px;" src="{{asset('images/delete.png')}}" alt="">
                             </button>
                         </form>
 

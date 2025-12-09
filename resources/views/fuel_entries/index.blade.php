@@ -45,20 +45,21 @@
                     <td>{{ $entry->fuel_type }}</td>
                     <td>
                         <a href="{{ asset('storage/'.$entry->receipt_image_path) }}" target="_blank" class="btn btn-sm btn-info">
-                            <i class="fa-solid fa-eye"></i>
+                                                        <img style="width:25px;" src="{{asset('images/eye.png')}}" alt="">
                         </a>
                     </td>
 
                     <td>
                         <a href="{{ route('fuel_entries.edit', $entry->id) }}" class="btn btn-sm btn-success">
-                            <i class="fa-solid fa-pen-to-square"></i>
+                                                        <img style="width:25px;" src="{{asset('images/edit.png')}}" alt="">
+
                         </a>
 
                         <form action="{{ route('fuel_entries.destroy', $entry->id) }}" method="POST" class="d-inline">
                             @csrf
                             @method('DELETE')
                             <button onclick="return confirm('¿Eliminar este registro?')" class="btn btn-sm btn-danger">
-                                <i class="fa-solid fa-trash-can"></i>
+                                                                <img style="width:25px;" src="{{asset('images/delete.png')}}" alt="">
                             </button>
                         </form>
                     </td>

@@ -35,15 +35,15 @@
                 </td>
                 <td>{{ $d->description }}</td>
                 <td>
-                    <a href="{{ route('department.edit', $d->id) }}" class="btn btn-sm btn-warning">
-                        <i class="fa-solid fa-pen-to-square"></i>
+                    <a href="{{ route('department.edit', $d->id) }}" class="btn btn-sm btn-success">
+                                                    <img style="width:25px;" src="{{asset('images/edit.png')}}" alt="">
                     </a>
 
                     <form action="{{ route('department.destroy', $d->id) }}" method="POST" class="d-inline">
                         @csrf 
                         @method('DELETE')
                         <button class="btn btn-sm btn-danger" onclick="return confirm('Delete this?');">
-                            <i class="fa-solid fa-trash-can"></i>
+                                                            <img style="width:25px;" src="{{asset('images/delete.png')}}" alt="">
                         </button>
                     </form>
                 </td>

@@ -127,7 +127,7 @@
                             <td>{{ $entry->fuel_type }}</td>
                             <td>
                                 <a href="{{ asset('storage/' . $entry->receipt_image_path) }}" target="_blank" class="btn btn-sm btn-info">
-                                    <i class="fa-solid fa-eye"></i>
+                                                                <img style="width:25px;" src="{{asset('images/eye.png')}}" alt="">
                                 </a>
                             </td>
                         </tr>
