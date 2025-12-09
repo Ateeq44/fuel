@@ -53,8 +53,9 @@
 
         <div class="mb-3">
             <label>Fecha</label>
-            <input type="date" name="date" class="form-control" required>
+            <input type="date" id="dateField" name="date" class="form-control" required>
         </div>
+
 
         <div class="mb-3">
             <label>Litros</label>
