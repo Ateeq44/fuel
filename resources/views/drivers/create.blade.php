@@ -25,7 +25,7 @@
 
                 @foreach($vehicles as $vehicle)
                     <option value="{{ $vehicle->id }}">
-                        {{ $vehicle->registration_number }} {{ $vehicle->model }}
+                        {{ $vehicle->registration_number }} {{"-"}} {{ $vehicle->model }}
                     </option>
                 @endforeach
 
