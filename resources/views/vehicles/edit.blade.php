@@ -15,6 +15,11 @@
         </div>
 
         <div class="mb-3">
+            <label>Nombre del vehículo</label>
+            <input type="text" name="vehicle_name" class="form-control" value="{{ $vehicle->vehicle_name }}" required>
+        </div>
+
+        <div class="mb-3">
             <label>Modelo</label>
             <input type="text" name="model" class="form-control" value="{{ $vehicle->model }}" required>
         </div>
