@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
 
-    <h2>Departments</h2>
+    <h2>Departamentos</h2>
     <div class="d-flex justify-content-end">
         <a href="{{ route('department.create') }}" class="btn btn-primary mb-3">Add Department</a>
     </div>
