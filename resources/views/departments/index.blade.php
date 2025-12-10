@@ -5,7 +5,7 @@
 
     <h2>Departamentos</h2>
     <div class="d-flex justify-content-end">
-        <a href="{{ route('department.create') }}" class="btn btn-primary mb-3">Add Department</a>
+        <a href="{{ route('department.create') }}" class="btn btn-primary mb-3">agregar departamento</a>
     </div>
 
     @if(session('success'))

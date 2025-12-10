@@ -4,7 +4,7 @@
 <div class="container">
     <h2>Gasolinera</h2>
     <div class="d-flex justify-content-end mb-3">
-        <a href="{{ route('gas_station.create') }}" class="btn btn-primary mb-3">Add Station</a>
+        <a href="{{ route('gas_station.create') }}" class="btn btn-primary mb-3">agregar estación</a>
     </div>
 
     <table class="table table-bordered">
