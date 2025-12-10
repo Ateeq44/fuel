@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\FuelEntry;
 use App\Models\Vehicle;
 use App\Models\Driver;
+use App\Models\Department;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 use Barryvdh\DomPDF\Facade\Pdf;
@@ -15,10 +16,12 @@ class AdminReportController extends Controller
     {
         $vehicles = Vehicle::all();
         $drivers  = Driver::all();
+        $department  = Department::all();
 
         // Filters
         $vehicle_id = $request->vehicle_id;
         $driver_id  = $request->driver_id;
+        $department_id  = $request->department_id;
         $from_date  = $request->from_date;
         $to_date    = $request->to_date;
 
@@ -32,6 +35,10 @@ class AdminReportController extends Controller
             $query->where('driver_id', $driver_id);
         }
 
+        if ($department_id) {
+            $query->where('department_id', $department_id);
+        }
+
         if ($from_date && $to_date) {
             $query->whereBetween('date', [$from_date, $to_date]);
         }
@@ -43,7 +50,7 @@ class AdminReportController extends Controller
         $totalCost   = $entries->sum('total_cost');
 
         return view('admin.reports.index', compact(
-            'vehicles', 'drivers', 'entries',
+            'vehicles', 'drivers', 'entries', 'department',
             'totalLiters', 'totalCost'
         ));
     }
@@ -54,6 +61,7 @@ class AdminReportController extends Controller
 {
     $vehicle_id = $request->vehicle_id;
     $driver_id  = $request->driver_id;
+    $department_id  = $request->department_id;
     $from_date  = $request->from_date;
     $to_date    = $request->to_date;
 
@@ -66,6 +74,10 @@ class AdminReportController extends Controller
 
     if ($driver_id) {
         $query->where('driver_id', $driver_id);
+    }
+    
+    if ($department_id) {
+        $query->where('department_id', $department_id);
     }
 
     // CASE 1: User selected From–To date manually

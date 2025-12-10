@@ -44,6 +44,16 @@
                         <input type="date" name="to_date" class="form-control">
                     </div>
 
+                    <div class="col-md-3 mb-3">
+                        <label>departamento</label>
+                        <select name="department_id" class="form-control">
+                            <option value="">Todos los departamento</option>
+                            @foreach($department as $v)
+                                <option value="{{ $v->id }}">{{ $v->name }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+
                 </div>
 
                 <button class="btn btn-primary">Buscar</button>
@@ -78,6 +88,7 @@
         <form action="{{ route('admin.reports.pdf') }}" method="GET">
             <input type="hidden" name="vehicle_id" value="{{ request('vehicle_id') }}">
             <input type="hidden" name="driver_id" value="{{ request('driver_id') }}">
+            <input type="hidden" name="department_id" value="{{ request('department_id') }}">
             <input type="hidden" name="from_date" value="{{ request('from_date') }}">
             <input type="hidden" name="to_date" value="{{ request('to_date') }}">
             <button type="submit" class="btn btn-primary">Exportar PDF</button>
@@ -85,6 +96,7 @@
         <form action="{{ route('admin.reports.excel') }}" method="GET">
             <input type="hidden" name="vehicle_id" value="{{ request('vehicle_id') }}">
             <input type="hidden" name="driver_id" value="{{ request('driver_id') }}">
+            <input type="hidden" name="department_id" value="{{ request('department_id') }}">
             <input type="hidden" name="from_date" value="{{ request('from_date') }}">
             <input type="hidden" name="to_date" value="{{ request('to_date') }}">
             <button type="submit" class="btn btn-success">Exportar Excel</button>
@@ -127,7 +139,7 @@
                             <td>{{ $entry->fuel_type }}</td>
                             <td>
                                 <a href="{{ asset('storage/' . $entry->receipt_image_path) }}" target="_blank" class="btn btn-sm btn-info">
-                                                                <img style="width:25px;" src="{{asset('images/eye.png')}}" alt="">
+                                    <img style="width:25px;" src="{{asset('images/eye.png')}}" alt="">
                                 </a>
                             </td>
                         </tr>
