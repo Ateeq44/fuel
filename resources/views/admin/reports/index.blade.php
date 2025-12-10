@@ -115,8 +115,8 @@
                         <th>Fecha</th>
                         <th>Vehículo</th>
                         <th>Conductor</th>
-                        <th>Department</th>
-                        <th>Gas Station</th>
+                        <th>departamento</th>
+                        <th>Gasolinera</th>
                         <th>Litros</th>
                         <th>Costo Total</th>
                         <th>Odómetro</th>
@@ -129,7 +129,7 @@
                     @foreach($entries as $entry)
                         <tr>
                             <td>{{ $entry->date }}</td>
-                            <td>{{ $entry->vehicle->registration_number }}</td>
+                            <td>{{ $entry->vehicle->registration_number }} {{"-"}} {{ $entry->vehicle->model }}</td>
                             <td>{{ $entry->driver->name }}</td>
                             <td>{{ $entry->department->name ?? 'N/A' }}</td>
                             <td>{{ $entry->gasStation->name ?? 'N/A' }}</td>

@@ -44,8 +44,8 @@
                 <th style="border: 1px solid #000; padding: 6px; text-align: left;background: #f0f0f0; ">Fecha</th>
                 <th style="border: 1px solid #000; padding: 6px; text-align: left;background: #f0f0f0; ">Vehículo</th>
                 <th style="border: 1px solid #000; padding: 6px; text-align: left;background: #f0f0f0; ">Conductor</th>
-                <th style="border: 1px solid #000; padding: 6px; text-align: left;background: #f0f0f0; ">Department</th>
-                <th style="border: 1px solid #000; padding: 6px; text-align: left;background: #f0f0f0; ">Gas Station</th>
+                <th style="border: 1px solid #000; padding: 6px; text-align: left;background: #f0f0f0; ">departamento</th>
+                <th style="border: 1px solid #000; padding: 6px; text-align: left;background: #f0f0f0; ">Gasolinera</th>
                 <th style="border: 1px solid #000; padding: 6px; text-align: left;background: #f0f0f0; ">Litros</th>
                 <th style="border: 1px solid #000; padding: 6px; text-align: left;background: #f0f0f0; ">Costo</th>
                 <th style="border: 1px solid #000; padding: 6px; text-align: left;background: #f0f0f0; ">Odómetro</th>
@@ -57,7 +57,7 @@
             @foreach($entries as $entry)
             <tr>
                 <td style="border: 1px solid #000; padding: 6px; text-align: left;">{{ $entry->date }}</td>
-                <td style="border: 1px solid #000; padding: 6px; text-align: left;">{{ $entry->vehicle->registration_number }}</td>
+                <td style="border: 1px solid #000; padding: 6px; text-align: left;">{{ $entry->vehicle->registration_number }} {{"-"}} {{ $entry->vehicle->model }}</td>
                 <td style="border: 1px solid #000; padding: 6px; text-align: left;">{{ $entry->driver->name }}</td>
                 <td style="border: 1px solid #000; padding: 6px; text-align: left;">{{ $entry->department->name ?? 'N/A' }}</td>
                 <td style="border: 1px solid #000; padding: 6px; text-align: left;">{{ $entry->gasStation->name ?? 'N/A' }}</td>

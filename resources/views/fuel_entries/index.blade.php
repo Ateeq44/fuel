@@ -19,8 +19,8 @@
                 <th>Fecha</th>
                 <th>Vehículo</th>
                 <th>Conductor</th>
-                <th>Department</th>
-                <th>Gas Station</th>
+                <th>departamento</th>
+                <th>Gasolinera</th>
                 <th>Litros</th>
                 <th>Costo Total</th>
                 <th>Odómetro</th>
