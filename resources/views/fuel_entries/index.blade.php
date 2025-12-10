@@ -35,7 +35,7 @@
                 <tr>
                     <td>{{ ++$key}}</td>
                     <td>{{ $entry->date }}</td>
-                    <td>{{ $entry->vehicle->registration_number }}</td>
+                    <td>{{ $entry->vehicle->registration_number }} {{"-"}} {{ $entry->vehicle->model }}</td>
                     <td>{{ $entry->driver->name }}</td>
                     <td>{{ $entry->department->name ?? 'N/A' }}</td>
                     <td>{{ $entry->gasStation->name ?? 'N/A' }}</td>
