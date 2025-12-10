@@ -30,7 +30,7 @@
                     <td>{{ ++$key}}</td>
                     <td>{{ $driver->name }}</td>
                     <td>{{ $driver->phone }}</td>
-                    <!-- <td>{{ $driver->vehicle->registration_number ?? 'No Asignado' }} {{"-"}} {{ $driver->vehicle->model ?? 'No Asignado' }}</td> -->
+                    <td>{{ $driver->vehicle->registration_number ?? 'No Asignado' }} {{"-"}} {{ $driver->vehicle->model ?? 'No Asignado' }}</td>
 
                     <td>
                         <a href="{{ route('drivers.edit', $driver->id) }}" class="btn btn-sm btn-success">
