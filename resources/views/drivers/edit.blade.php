@@ -28,7 +28,7 @@
                 @foreach($vehicles as $vehicle)
                     <option value="{{ $vehicle->id }}" 
                         {{ $driver->assigned_vehicle_id == $vehicle->id ? 'selected' : '' }}>
-                        {{ $vehicle->registration_number }}
+                        {{ $vehicle->registration_number }} {{"-"}} {{ $vehicle->model }}
                     </option>
                 @endforeach
 
